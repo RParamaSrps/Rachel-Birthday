@@ -23,7 +23,6 @@ $('document').ready(function(){
 		$('#bulb_green').addClass('bulb-glow-green');
 		$('#bulb_pink').addClass('bulb-glow-pink');
 		$('#bulb_orange').addClass('bulb-glow-orange');
-		$('body').addClass('background-on');
 		$('body').addClass('peach');
 		$(this).fadeOut('slow').delay(5000).promise().done(function(){
 			$('#play').fadeIn('slow');
