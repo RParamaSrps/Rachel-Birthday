@@ -172,7 +172,7 @@ $('document').ready(function(){
 		
 		var i;
 
-		function msgLoop (i) {
+		/*function msgLoop (i) {
 			$("p:nth-child("+i+")").fadeOut('slow').delay(2000).promise().done(function(){
 			i=i+1;
 			$("p:nth-child("+i+")").fadeIn('slow').delay(7500);
@@ -188,7 +188,23 @@ $('document').ready(function(){
 
 		});
 			// body...
-		}
+		}*/
+
+		function msgLoop(i) {
+			$("p:nth-child(" + i + ")").fadeOut('slow').promise().done(function () {
+			i = i + 1;
+			$("p:nth-child(" + i + ")").fadeIn('slow').delay(4000).promise().done(function () {
+				if (i == 50) {
+					$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
+						$('.cake').fadeIn('fast');
+					});
+				} else {
+					msgLoop(i);
+				}
+			});
+		});
+	}
+
 		
 		msgLoop(0);
 		
